@@ -140,18 +140,26 @@ function buildCharts(sample) {
       value: washFreq,
       type: "indicator",
       mode: "gauge+number",
-      title: { text: "Belly Button Washing Frequency"},
+      title: { text: `<b>Belly Button Washing Frequency</b><br>Scrubs per Week` },
       gauge: {
-        axis: { range: [null, 10]}
+        axis: { range: [null, 10], dtick: 2 },
+        bar: { color: "black" },
+        steps: [
+          { range: [0, 2], color: "red" },
+          { range: [2, 4], color: "orange" },
+          { range: [4, 6], color: "yellow" },
+          { range: [6, 8], color: "yellowgreen" },
+          { range: [8, 10], color: "green"}
+        ]
       }
     }];
     
     // 5. Create the layout for the gauge chart.
-    // var gaugeLayout = { 
-     
-    // };
+    var gaugeLayout = {
+      margin: { t: 25, r: 25, l: 25, b: 25 }
+    };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeData);
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
   });
 }
