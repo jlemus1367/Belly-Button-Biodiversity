@@ -8,3 +8,6 @@ In the following project, we used Plotly to visualize the belly button flora of 
 - JavaScript
   - D3 Version 4.11
   - Plotly
+
+## Deployment
+https://jlemus1367.github.io/Belly-Button-Biodiversity/
